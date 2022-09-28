@@ -1,29 +1,33 @@
-# Package-Name
+# pydtype
 
-[![PyPI](https://img.shields.io/pypi/v/package-name.svg?label=PyPI&style=flat-square)](https://pypi.org/pypi/package-name/)
-[![Python](https://img.shields.io/pypi/pyversions/package-name.svg?label=Python&color=yellow&style=flat-square)](https://pypi.org/pypi/package-name/)
-[![Test](https://img.shields.io/github/workflow/status/KaoruNishikawa/Package-Name/Test?logo=github&label=Test&style=flat-square)](https://github.com/KaoruNishikawa/Package-Name/actions)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg?label=License&style=flat-square)](https://github.com/KaoruNishikawa/Package-Name/blob/main/LICENSE)
+[![PyPI](https://img.shields.io/pypi/v/pydtype.svg?label=PyPI&style=flat-square)](https://pypi.org/pypi/pydtype/)
+[![Python](https://img.shields.io/pypi/pyversions/pydtype.svg?label=Python&color=yellow&style=flat-square)](https://pypi.org/pypi/pydtype/)
+[![Test](https://img.shields.io/github/workflow/status/KaoruNishikawa/pydtype/Test?logo=github&label=Test&style=flat-square)](https://github.com/KaoruNishikawa/pydtype/actions)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?label=License&style=flat-square)](https://github.com/KaoruNishikawa/pydtype/blob/main/LICENSE)
 
-Python package template.
+Translate data type specifiers between common frameworks.
 
 ## Features
 
 This library provides:
 
-- something.
+- Translator of data type spacifier such as [format character in struct](https://docs.python.org/3/library/struct.html#format-characters) and [dtype in Numpy](https://numpy.org/doc/stable/reference/arrays.dtypes.html#specifying-and-constructing-data-types).
 
 ## Installation
 
 ```shell
-pip install package-name
+pip install pydtype
 ```
 
 ## Usage
 
-### 1st module
+To translate struct format `h` (2-byte integer) to Numpy format, run the following script.
 
-### 2nd module
+```python
+>>> import pydtype
+>>> pydtype.translate("h", "struct", "numpy")
+'i16'
+```
 
 ---
 
