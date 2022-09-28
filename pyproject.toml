@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "package-name"
+name = "pydtype"
 version = "0.1.0"
-description = "TEMPLATE"
+description = "Translate data type specifiers between common frameworks"
 license = "MIT"
 readme = "README.md"
 authors = ["KaoruNishikawa <k.nishikawa@a.phys.nagoya-u.ac.jp>"]
-homepage = "https://github.com/KaoruNishikawa/Package-Name"
-repository = "https://github.com/KaoruNishikawa/Package-Name"
+homepage = "https://github.com/KaoruNishikawa/pydtype"
+repository = "https://github.com/KaoruNishikawa/pydtype"
 
 [tool.poetry.dependencies]
 python = "^3.6"
