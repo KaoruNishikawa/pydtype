@@ -1,7 +1,7 @@
 """Format characters in struct, Python standard library."""
 
 import re
-from typing import List, NoReturn, Optional, Tuple, Union
+from typing import List, Optional, Tuple, Union
 
 from ..core import Parser, Specifier, Types
 from ..typing import Shape
@@ -18,11 +18,6 @@ class StructFormat(Specifier):
         if len(shape) > 1:
             raise ValueError(f"Multi-dimensional array (shape={shape}) isn't supported")
         return self.character * shape[0]
-
-    def get(self) -> NoReturn:
-        raise NotImplementedError(
-            "Struct doesn't implement Python objects that represent individual types."
-        )
 
     def ident(self, spec: str) -> Optional[Shape]:
         parsed = re.findall(rf"^(\d*){re.escape(self.character)}$", spec)

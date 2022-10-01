@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
-from typing import Any, ClassVar, Optional, Type
+from typing import ClassVar, Optional
 
 from ..typing import Shape
 
@@ -27,10 +27,6 @@ class Specifier(ABC):
         filled with 10-character strings.
 
         """
-        ...
-
-    @abstractmethod
-    def get(self) -> Type[Any]:
         ...
 
     @abstractmethod
