@@ -1,0 +1,7 @@
+pydtype.frameworks.numpy
+========================
+
+.. automodule:: pydtype.frameworks.numpy
+   :members:
+   :undoc-members:
+   :show-inheritance:

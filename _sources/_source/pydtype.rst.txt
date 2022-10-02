@@ -1,0 +1,52 @@
+
+
+
+pydtype
+=======
+
+
+
+
+.. automodule:: pydtype
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+
+
+Subpackages
+-----------
+
+.. autosummary::
+
+   pydtype.core
+   pydtype.frameworks
+
+.. toctree::
+   :maxdepth: 4
+   :titlesonly:
+   :hidden:
+
+   pydtype.core
+   pydtype.frameworks
+
+
+
+
+
+Submodules
+----------
+
+.. autosummary::
+
+   pydtype.translator
+   pydtype.typing
+
+.. toctree::
+   :maxdepth: 4
+   :titlesonly:
+   :hidden:
+
+   pydtype.translator
+   pydtype.typing

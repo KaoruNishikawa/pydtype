@@ -1,0 +1,35 @@
+
+
+
+pydtype.frameworks
+==================
+
+
+
+
+.. automodule:: pydtype.frameworks
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+
+
+
+
+
+Submodules
+----------
+
+.. autosummary::
+
+   pydtype.frameworks.numpy
+   pydtype.frameworks.struct
+
+.. toctree::
+   :maxdepth: 4
+   :titlesonly:
+   :hidden:
+
+   pydtype.frameworks.numpy
+   pydtype.frameworks.struct

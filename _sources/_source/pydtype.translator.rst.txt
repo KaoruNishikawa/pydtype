@@ -1,0 +1,7 @@
+pydtype.translator
+==================
+
+.. automodule:: pydtype.translator
+   :members:
+   :undoc-members:
+   :show-inheritance:

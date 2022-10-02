@@ -1,0 +1,409 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>pydtype.frameworks.numpy &#8212; pydtype 0.1.0 documentation</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="pydtype.frameworks.struct" href="pydtype.frameworks.struct.html" />
+    <link rel="prev" title="pydtype.frameworks" href="pydtype.frameworks.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="../index.html">
+<p class="title">pydtype</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../index.html">
+  Home
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="pydtype.html">
+  API Reference
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/KaoruNishikawa/pydtype" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://pypi.org/project/pydtype/" rel="noopener" target="_blank" title="PyPI">
+            <span><i class="fas fa-cubes"></i></span>
+            <label class="sr-only">PyPI</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><!DOCTYPE html>
+<!-- This will display the version of the docs -->
+<p style="text-align: center; font-family: Verdana, sans-serif;">v0.1.0</p><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="pydtype.core.html">
+   pydtype.core
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pydtype.core.parser.html">
+     pydtype.core.parser
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pydtype.core.specifier.html">
+     pydtype.core.specifier
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pydtype.core.types.html">
+     pydtype.core.types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="pydtype.frameworks.html">
+   pydtype.frameworks
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     pydtype.frameworks.numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pydtype.frameworks.struct.html">
+     pydtype.frameworks.struct
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="pydtype.translator.html">
+   pydtype.translator
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pydtype.typing.html">
+   pydtype.typing
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+
+<nav id="bd-toc-nav">
+    
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="module-pydtype.frameworks.numpy">
+<span id="pydtype-frameworks-numpy"></span><h1>pydtype.frameworks.numpy<a class="headerlink" href="#module-pydtype.frameworks.numpy" title="Permalink to this headline">¶</a></h1>
+<p>dtype in NumPy.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="pydtype.frameworks.numpy.NumPyFormat">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NumPyFormat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">common_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">byte_size</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydtype/frameworks/numpy.html#NumPyFormat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydtype.frameworks.numpy.NumPyFormat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pydtype.core.specifier.html#pydtype.core.specifier.Specifier" title="pydtype.core.specifier.Specifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">Specifier</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>common_name</strong> (<em>str</em>) – </p></li>
+<li><p><strong>character</strong> (<em>str</em>) – </p></li>
+<li><p><strong>kind</strong> (<em>str</em>) – </p></li>
+<li><p><strong>byte_size</strong> (<em>int</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pydtype.frameworks.numpy.NumPyFormat.framework">
+<span class="sig-name descname"><span class="pre">framework</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'numpy'</span></em><a class="headerlink" href="#pydtype.frameworks.numpy.NumPyFormat.framework" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pydtype.frameworks.numpy.NumPyFormat.reference">
+<span class="sig-name descname"><span class="pre">reference</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'https://numpy.org/doc/stable/reference/arrays.dtypes.html'</span></em><a class="headerlink" href="#pydtype.frameworks.numpy.NumPyFormat.reference" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydtype.frameworks.numpy.NumPyFormat.with_shape">
+<span class="sig-name descname"><span class="pre">with_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydtype/frameworks/numpy.html#NumPyFormat.with_shape"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydtype.frameworks.numpy.NumPyFormat.with_shape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a specifier for array.</p>
+<p class="rubric">Notes</p>
+<p>For string or byte array types, the size of first dimension represents the
+length of the string, i.e., shape=(10, 3, 4) means a 2D array of shape (3, 4)
+filled with 10-character strings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydtype.frameworks.numpy.NumPyFormat.ident">
+<span class="sig-name descname"><span class="pre">ident</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydtype/frameworks/numpy.html#NumPyFormat.ident"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydtype.frameworks.numpy.NumPyFormat.ident" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>spec</strong> (<em>str</em>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><em>Optional</em>[<em>Sequence</em>[int]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pydtype.frameworks.numpy.NumPyFormat.common_name">
+<span class="sig-name descname"><span class="pre">common_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pydtype.frameworks.numpy.NumPyFormat.common_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pydtype.frameworks.numpy.NumPyFormat.character">
+<span class="sig-name descname"><span class="pre">character</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pydtype.frameworks.numpy.NumPyFormat.character" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pydtype.frameworks.numpy.NumPyFormat.kind">
+<span class="sig-name descname"><span class="pre">kind</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pydtype.frameworks.numpy.NumPyFormat.kind" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pydtype.frameworks.numpy.NumPyFormat.byte_size">
+<span class="sig-name descname"><span class="pre">byte_size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pydtype.frameworks.numpy.NumPyFormat.byte_size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydtype.frameworks.numpy.NumPyTypes">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NumPyTypes</span></span><a class="reference internal" href="../_modules/pydtype/frameworks/numpy.html#NumPyTypes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydtype.frameworks.numpy.NumPyTypes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pydtype.core.types.html#pydtype.core.types.Types" title="pydtype.core.types.Types"><code class="xref py py-class docutils literal notranslate"><span class="pre">Types</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pydtype.frameworks.numpy.NumPyTypes.framework">
+<span class="sig-name descname"><span class="pre">framework</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'numpy'</span></em><a class="headerlink" href="#pydtype.frameworks.numpy.NumPyTypes.framework" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pydtype.frameworks.numpy.NumPyTypes.types">
+<span class="sig-name descname"><span class="pre">types</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pydtype.core.specifier.html#pydtype.core.specifier.Specifier" title="pydtype.core.specifier.Specifier"><span class="pre">pydtype.core.specifier.Specifier</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(NumPyFormat(common_name='bool',</span> <span class="pre">character='?',</span> <span class="pre">kind='bool',</span> <span class="pre">byte_size=1),</span> <span class="pre">NumPyFormat(common_name='int8',</span> <span class="pre">character='b',</span> <span class="pre">kind='int',</span> <span class="pre">byte_size=1),</span> <span class="pre">NumPyFormat(common_name='uint8',</span> <span class="pre">character='B',</span> <span class="pre">kind='uint',</span> <span class="pre">byte_size=1),</span> <span class="pre">NumPyFormat(common_name='int8',</span> <span class="pre">character='i1',</span> <span class="pre">kind='int',</span> <span class="pre">byte_size=1),</span> <span class="pre">NumPyFormat(common_name='int16',</span> <span class="pre">character='i2',</span> <span class="pre">kind='int',</span> <span class="pre">byte_size=2),</span> <span class="pre">NumPyFormat(common_name='int32',</span> <span class="pre">character='i4',</span> <span class="pre">kind='int',</span> <span class="pre">byte_size=4),</span> <span class="pre">NumPyFormat(common_name='int64',</span> <span class="pre">character='i8',</span> <span class="pre">kind='int',</span> <span class="pre">byte_size=8),</span> <span class="pre">NumPyFormat(common_name='uint8',</span> <span class="pre">character='u1',</span> <span class="pre">kind='uint',</span> <span class="pre">byte_size=1),</span> <span class="pre">NumPyFormat(common_name='uint16',</span> <span class="pre">character='u2',</span> <span class="pre">kind='uint',</span> <span class="pre">byte_size=2),</span> <span class="pre">NumPyFormat(common_name='uint32',</span> <span class="pre">character='u4',</span> <span class="pre">kind='uint',</span> <span class="pre">byte_size=4),</span> <span class="pre">NumPyFormat(common_name='uint64',</span> <span class="pre">character='u8',</span> <span class="pre">kind='uint',</span> <span class="pre">byte_size=8),</span> <span class="pre">NumPyFormat(common_name='float16',</span> <span class="pre">character='f2',</span> <span class="pre">kind='float',</span> <span class="pre">byte_size=2),</span> <span class="pre">NumPyFormat(common_name='float32',</span> <span class="pre">character='f4',</span> <span class="pre">kind='float',</span> <span class="pre">byte_size=4),</span> <span class="pre">NumPyFormat(common_name='float64',</span> <span class="pre">character='f8',</span> <span class="pre">kind='float',</span> <span class="pre">byte_size=8),</span> <span class="pre">NumPyFormat(common_name='float128',</span> <span class="pre">character='f16',</span> <span class="pre">kind='float',</span> <span class="pre">byte_size=16),</span> <span class="pre">NumPyFormat(common_name='complex64',</span> <span class="pre">character='c8',</span> <span class="pre">kind='complex',</span> <span class="pre">byte_size=8),</span> <span class="pre">NumPyFormat(common_name='complex128',</span> <span class="pre">character='c16',</span> <span class="pre">kind='complex',</span> <span class="pre">byte_size=16),</span> <span class="pre">NumPyFormat(common_name='complex256',</span> <span class="pre">character='c32',</span> <span class="pre">kind='complex',</span> <span class="pre">byte_size=32),</span> <span class="pre">NumPyFormat(common_name='timedelta',</span> <span class="pre">character='m',</span> <span class="pre">kind='timedelta',</span> <span class="pre">byte_size=8),</span> <span class="pre">NumPyFormat(common_name='timedelta',</span> <span class="pre">character='m8',</span> <span class="pre">kind='timedelta',</span> <span class="pre">byte_size=8),</span> <span class="pre">NumPyFormat(common_name='datetime',</span> <span class="pre">character='M',</span> <span class="pre">kind='datetime',</span> <span class="pre">byte_size=8),</span> <span class="pre">NumPyFormat(common_name='datetime',</span> <span class="pre">character='M8',</span> <span class="pre">kind='datetime',</span> <span class="pre">byte_size=8),</span> <span class="pre">NumPyFormat(common_name='object',</span> <span class="pre">character='O',</span> <span class="pre">kind=None,</span> <span class="pre">byte_size=None),</span> <span class="pre">NumPyFormat(common_name='string',</span> <span class="pre">character='S',</span> <span class="pre">kind='bytes',</span> <span class="pre">byte_size=1),</span> <span class="pre">NumPyFormat(common_name='string',</span> <span class="pre">character='a',</span> <span class="pre">kind='bytes',</span> <span class="pre">byte_size=1),</span> <span class="pre">NumPyFormat(common_name='unicode',</span> <span class="pre">character='U',</span> <span class="pre">kind='str',</span> <span class="pre">byte_size=1),</span> <span class="pre">NumPyFormat(common_name='void',</span> <span class="pre">character='V',</span> <span class="pre">kind=None,</span> <span class="pre">byte_size=None),</span> <span class="pre">NumPyFormat(common_name='c_short',</span> <span class="pre">character='h',</span> <span class="pre">kind='int',</span> <span class="pre">byte_size=2),</span> <span class="pre">NumPyFormat(common_name='c_ushort',</span> <span class="pre">character='H',</span> <span class="pre">kind='uint',</span> <span class="pre">byte_size=2),</span> <span class="pre">NumPyFormat(common_name='c_long',</span> <span class="pre">character='l',</span> <span class="pre">kind='int',</span> <span class="pre">byte_size=8),</span> <span class="pre">NumPyFormat(common_name='c_ulong',</span> <span class="pre">character='L',</span> <span class="pre">kind='uint',</span> <span class="pre">byte_size=8),</span> <span class="pre">NumPyFormat(common_name='c_int',</span> <span class="pre">character='i',</span> <span class="pre">kind='int',</span> <span class="pre">byte_size=4),</span> <span class="pre">NumPyFormat(common_name='c_uint',</span> <span class="pre">character='I',</span> <span class="pre">kind='uint',</span> <span class="pre">byte_size=4),</span> <span class="pre">NumPyFormat(common_name='c_float',</span> <span class="pre">character='f',</span> <span class="pre">kind='float',</span> <span class="pre">byte_size=4),</span> <span class="pre">NumPyFormat(common_name='c_double',</span> <span class="pre">character='d',</span> <span class="pre">kind='float',</span> <span class="pre">byte_size=8),</span> <span class="pre">NumPyFormat(common_name='c_longdouble',</span> <span class="pre">character='g',</span> <span class="pre">kind='float',</span> <span class="pre">byte_size=16),</span> <span class="pre">NumPyFormat(common_name='c',</span> <span class="pre">character='c',</span> <span class="pre">kind='char',</span> <span class="pre">byte_size=1),</span> <span class="pre">NumPyFormat(common_name='p',</span> <span class="pre">character='p',</span> <span class="pre">kind='int',</span> <span class="pre">byte_size=8),</span> <span class="pre">NumPyFormat(common_name='P',</span> <span class="pre">character='P',</span> <span class="pre">kind='uint',</span> <span class="pre">byte_size=8),</span> <span class="pre">NumPyFormat(common_name='bool',</span> <span class="pre">character='b1',</span> <span class="pre">kind='bool',</span> <span class="pre">byte_size=1))</span></em><a class="headerlink" href="#pydtype.frameworks.numpy.NumPyTypes.types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydtype.frameworks.numpy.NumPyParser">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NumPyParser</span></span><a class="reference internal" href="../_modules/pydtype/frameworks/numpy.html#NumPyParser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydtype.frameworks.numpy.NumPyParser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pydtype.core.parser.html#pydtype.core.parser.Parser" title="pydtype.core.parser.Parser"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parser</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pydtype.frameworks.numpy.NumPyParser.framework">
+<span class="sig-name descname"><span class="pre">framework</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'numpy'</span></em><a class="headerlink" href="#pydtype.frameworks.numpy.NumPyParser.framework" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydtype.frameworks.numpy.NumPyParser.encode">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">encode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">spec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strategy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'exact'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydtype/frameworks/numpy.html#NumPyParser.encode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydtype.frameworks.numpy.NumPyParser.encode" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>strategy</strong> (<em>str</em>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydtype.frameworks.numpy.NumPyParser.decode">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydtype/frameworks/numpy.html#NumPyParser.decode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydtype.frameworks.numpy.NumPyParser.decode" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>spec</strong> (<em>str</em>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><em>List</em>[<em>Union</em>[str, <em>Tuple</em>[<a class="reference internal" href="pydtype.core.specifier.html#pydtype.core.specifier.Specifier" title="pydtype.core.specifier.Specifier"><em>Specifier</em></a>, <em>Sequence</em>[int]]]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="pydtype.frameworks.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">pydtype.frameworks</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="pydtype.frameworks.struct.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">pydtype.frameworks.struct</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2022, Kaoru Nishikawa.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

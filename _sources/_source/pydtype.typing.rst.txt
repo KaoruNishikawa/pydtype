@@ -1,0 +1,7 @@
+pydtype.typing
+==============
+
+.. automodule:: pydtype.typing
+   :members:
+   :undoc-members:
+   :show-inheritance:

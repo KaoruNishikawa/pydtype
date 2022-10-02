@@ -1,0 +1,7 @@
+pydtype.frameworks.struct
+=========================
+
+.. automodule:: pydtype.frameworks.struct
+   :members:
+   :undoc-members:
+   :show-inheritance:

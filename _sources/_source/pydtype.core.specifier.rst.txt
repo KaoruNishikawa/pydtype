@@ -1,0 +1,7 @@
+pydtype.core.specifier
+======================
+
+.. automodule:: pydtype.core.specifier
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,7 @@
+pydtype.core.parser
+===================
+
+.. automodule:: pydtype.core.parser
+   :members:
+   :undoc-members:
+   :show-inheritance:
