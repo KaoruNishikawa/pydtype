@@ -11,7 +11,6 @@ repository = "https://github.com/KaoruNishikawa/pydtype"
 [tool.poetry.dependencies]
 python = "^3.6"
 importlib-metadata = { version = "^4.4", python = "<3.8" }
-numpy = "^1.19"
 typing-extensions = { version = "^4.1", python = "<3.8" }
 
 [tool.poetry.dev-dependencies]
@@ -22,10 +21,9 @@ jupyter = { version = "^1.0", python = ">=3.7" }
 myst-parser = { version = "^0.18", python = ">=3.7" }
 notebook = { version = "^6.4", python = ">=3.7" }
 pydata-sphinx-theme = "^0.7"
-pytest = "^5.2"
+pytest = "^6.2.5"
 sphinx = "^4.4"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
-
