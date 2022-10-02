@@ -2,6 +2,8 @@ import pytest
 
 from pydtype.frameworks import StructParser
 
+from ..conftest import get_spec
+
 
 class TestStructParser:
     @pytest.mark.parametrize(
@@ -97,3 +99,75 @@ class TestStructParser:
             assert spec.kind == _kind
             assert spec.byte_size == _byte_size
             assert ashape == _shape
+
+    @pytest.mark.parametrize(
+        "spec,expected",
+        [
+            ([get_spec("char", 1), tuple()], "c"),
+            ([get_spec("int", 1), tuple()], "b"),
+            ([get_spec("uint", 1), tuple()], "B"),
+            ([get_spec("bool", 1), tuple()], "?"),
+            ([get_spec("int", 2), tuple()], "h"),
+            ([get_spec("uint", 2), tuple()], "H"),
+            ([get_spec("int", 8), tuple()], "q"),
+            ([get_spec("uint", 8), tuple()], "Q"),
+            ([get_spec("float", 2), tuple()], "e"),
+            ([get_spec("float", 4), tuple()], "f"),
+            ([get_spec("float", 8), tuple()], "d"),
+            ([get_spec("bytes", 1), (1,)], "1s"),
+        ],
+    )
+    def test_encode_single_format(self, spec, expected):
+        assert StructParser.encode(spec) == expected
+
+    @pytest.mark.parametrize(
+        "spec,expected",
+        [
+            ([(get_spec("char", 1), tuple()), (get_spec("char", 1), tuple())], "cc"),
+            ([(get_spec("int", 1), tuple()), (get_spec("uint", 1), tuple())], "bB"),
+            ([(get_spec("bool", 1), tuple()), (get_spec("int", 2), tuple())], "?h"),
+            ([(get_spec("uint", 2), tuple()), (get_spec("int", 8), tuple())], "Hq"),
+            ([(get_spec("uint", 8), tuple()), (get_spec("float", 2), tuple())], "Qe"),
+            ([(get_spec("float", 4), tuple()), (get_spec("float", 8), tuple())], "fd"),
+            ([(get_spec("bytes", 1), (100,)), (get_spec("bytes", 1), (1,))], "100s1s"),
+            ([(get_spec("float", 2), tuple()), (get_spec("bytes", 1), (2,))], "e2s"),
+        ],
+    )
+    def test_encode_multiple_format(self, spec, expected):
+        assert StructParser.encode(*spec) == expected
+
+    @pytest.mark.parametrize(
+        "spec,expected",
+        [
+            ([get_spec("char", 1), (11,)], "11c"),
+            ([get_spec("int", 1), (5,)], "5b"),
+            ([get_spec("uint", 1), (55,)], "55B"),
+            ([get_spec("bool", 1), (3,)], "3?"),
+            ([get_spec("int", 2), (2,)], "2h"),
+            ([get_spec("uint", 2), (5,)], "5H"),
+            ([get_spec("int", 8), (55,)], "55q"),
+            ([get_spec("uint", 8), (5,)], "5Q"),
+            ([get_spec("float", 2), (25,)], "25e"),
+            ([get_spec("float", 4), (51,)], "51f"),
+            ([get_spec("float", 8), (55,)], "55d"),
+            ([get_spec("bytes", 1), (5, 5)], "5s5s5s5s5s"),
+        ],
+    )
+    def test_encode_single_array(self, spec, expected):
+        assert StructParser.encode(spec) == expected
+
+    @pytest.mark.parametrize(
+        "spec,expected",
+        [
+            ([(get_spec("char", 1), (3,)), (get_spec("char", 1), tuple())], "3cc"),
+            ([(get_spec("int", 1), (51,)), (get_spec("uint", 1), (2,))], "51b2B"),
+            ([(get_spec("bool", 1), (9,)), (get_spec("int", 2), (3,))], "9?3h"),
+            ([(get_spec("uint", 2), (7,)), (get_spec("int", 8), (2,))], "7H2q"),
+            ([(get_spec("uint", 8), (2,)), (get_spec("float", 2), (3,))], "2Q3e"),
+            ([(get_spec("float", 4), (5,)), (get_spec("float", 8), (5,))], "5f5d"),
+            ([(get_spec("bytes", 1), (7, 2)), (get_spec("bytes", 1), (1,))], "7s7s1s"),
+            ([(get_spec("float", 2), (3,)), (get_spec("bytes", 1), (2, 2))], "3e2s2s"),
+        ],
+    )
+    def test_encode_multiple_array(self, spec, expected):
+        assert StructParser.encode(*spec) == expected
