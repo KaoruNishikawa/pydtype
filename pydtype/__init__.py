@@ -7,3 +7,7 @@ try:
     __version__ = version("pydtype")
 except:  # noqa: E722
     __version__ = "0.0.0"
+
+
+# Alias
+from .translator import translate  # noqa: F401
