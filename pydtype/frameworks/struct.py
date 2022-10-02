@@ -12,12 +12,23 @@ class StructFormat(Specifier):
     framework = "struct"
     reference = "https://docs.python.org/3/library/struct.html#format-characters"
 
-    def with_shape(self, *shape) -> str:
+    def with_shape(self, *shape: int) -> str:
         if len(shape) == 0:
             return self.character
-        if len(shape) > 1:
-            raise ValueError(f"Multi-dimensional array (shape={shape}) isn't supported")
-        return self.character * shape[0]
+        if "s" in self.character:
+            if len(shape) > 2:
+                raise ValueError(
+                    f"Multi-dimensional array (shape={shape[1:]}) isn't supported"
+                )
+            if len(shape) == 1:
+                return f"{shape[0]}s"
+            return f"{shape[0]}{self.character}" * shape[1]
+        else:
+            if len(shape) > 1:
+                raise ValueError(
+                    f"Multi-dimensional array (shape={shape}) isn't supported"
+                )
+            return f"{shape[0]}{self.character}"
 
     def ident(self, spec: str) -> Optional[Shape]:
         parsed = re.findall(rf"^(\d*){re.escape(self.character)}$", spec)
@@ -29,6 +40,8 @@ class StructFormat(Specifier):
 
 
 class StructTypes(Types):
+
+    framework = "struct"
     types = (
         StructFormat("pad byte", "x", None, None),
         StructFormat("char", "c", "char", 1),
@@ -55,15 +68,18 @@ class StructTypes(Types):
 
 
 class StructParser(Parser):
+
+    framework = "struct"
+
     @classmethod
-    def encode(cls, *spec, strategy: str = "exact") -> str:
+    def encode(cls, *spec: Tuple[Specifier, Shape], strategy: str = "exact") -> str:
         endian = ""
         if isinstance(spec[0], str):
             endian, *spec = spec
 
         formats = [
             StructTypes.search(s.kind, s.byte_size, strategy).with_shape(*shape)
-            for s, *shape in spec
+            for s, shape in spec
         ]
         return endian + "".join(formats)
 
