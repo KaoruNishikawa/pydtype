@@ -21,10 +21,9 @@ jupyter = { version = "^1.0", python = ">=3.7" }
 myst-parser = { version = "^0.18", python = ">=3.7" }
 notebook = { version = "^6.4", python = ">=3.7" }
 pydata-sphinx-theme = "^0.7"
-pytest = "^5.2"
+pytest = "^6.2.5"
 sphinx = "^4.4"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
-
