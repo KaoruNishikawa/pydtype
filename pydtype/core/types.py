@@ -1,4 +1,4 @@
-from typing import Any, Callable, Sequence, Tuple
+from typing import Any, Callable, ClassVar, Sequence, Tuple
 
 from .specifier import Specifier
 from ..typing import Shape
@@ -6,7 +6,8 @@ from ..typing import Shape
 
 class Types:
 
-    types: Sequence[Specifier]
+    types: ClassVar[Sequence[Specifier]]
+    framework: ClassVar[str]
 
     @classmethod
     def search(cls, kind: str, byte_size: int, strategy: str = "exact") -> Specifier:

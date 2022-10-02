@@ -1,14 +1,17 @@
 from abc import ABC, abstractmethod
-from typing import List, Tuple, Union
+from typing import ClassVar, List, Tuple, Union
 
 from .specifier import Specifier
 from ..typing import Shape
 
 
 class Parser(ABC):
+
+    framework: ClassVar[str]
+
     @classmethod
     @abstractmethod
-    def encode(cls, *spec, strategy: str = "exact") -> str:
+    def encode(cls, *spec: Tuple[Specifier, Shape], strategy: str = "exact") -> str:
         ...
 
     @classmethod
