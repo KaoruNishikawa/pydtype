@@ -24,7 +24,7 @@ class StructFormat(Specifier):
         if len(parsed) == 0:
             return
         if parsed[0] == "":
-            return tuple()
+            return (1,) if "s" in spec else tuple()
         return tuple(map(int, parsed))
 
 
@@ -69,7 +69,7 @@ class StructParser(Parser):
 
     @classmethod
     def decode(cls, spec: str) -> List[Union[str, Tuple[Specifier, Shape]]]:
-        split = re.findall(r"([@=<>!]+|\d*[\w\?])", spec)
+        split = re.findall(r"([@=<>!]+|\d*[a-zA-Z\?])", spec)
         endian = None
         if split[0] in "@=<>!":
             endian, *split = split

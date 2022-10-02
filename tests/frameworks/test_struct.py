@@ -22,7 +22,7 @@ class TestStructParser:
             ("e", tuple(), "float", 2),
             ("f", tuple(), "float", 4),
             ("d", tuple(), "float", 8),
-            ("s", tuple(), "bytes", 1),
+            ("s", (1,), "bytes", 1),
         ],
     )
     def test_decode_single_format(self, specifier, shape, kind, byte_size):
@@ -39,8 +39,8 @@ class TestStructParser:
             ("?hH", [tuple(), tuple(), tuple()], ["bool", "int", "uint"], [1, 2, 2]),
             ("iIl", [tuple(), tuple(), tuple()], ["int", "uint", "int"], [4, 4, 4]),
             ("qQe", [tuple(), tuple(), tuple()], ["int", "uint", "float"], [8, 8, 2]),
-            ("fd", [tuple(), tuple()], ["float", "float"], [4, 8]),
-            ("ss", [tuple(), tuple()], ["bytes", "bytes"], [1, 1]),
+            ("fds", [tuple(), tuple(), (1,)], ["float", "float", "bytes"], [4, 8, 1]),
+            ("ss", [(1,), (1,)], ["bytes", "bytes"], [1, 1]),
         ],
     )
     def test_decode_multiple_formats(self, specifier, shape, kind, byte_size):
@@ -86,7 +86,7 @@ class TestStructParser:
             ("?2h5H", [tuple(), (2,), (5,)], ["bool", "int", "uint"], [1, 2, 2]),
             ("1iI1l", [(1,), tuple(), (1,)], ["int", "uint", "int"], [4, 4, 4]),
             ("q10Qe", [tuple(), (10,), tuple()], ["int", "uint", "float"], [8, 8, 2]),
-            ("15f15d", [(15,), (15,)], ["float", "float"], [4, 8]),
+            ("15f15d1s", [(15,), (15,), (1,)], ["float", "float", "bytes"], [4, 8, 1]),
             ("1s150s", [(1,), (150,)], ["bytes", "bytes"], [1, 1]),
         ],
     )
