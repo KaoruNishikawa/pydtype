@@ -17,7 +17,7 @@ class Specifier(ABC):
     byte_size: int
 
     @abstractmethod
-    def with_shape(self, *shape) -> str:
+    def with_shape(self, *shape: int) -> str:
         """Return a specifier for array.
 
         Notes
