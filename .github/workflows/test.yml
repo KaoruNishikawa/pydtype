@@ -24,7 +24,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install dependencies
         run: |
-          pip3 install poetry
+          pip3 install 'poetry>=1.2'
           poetry install
           poetry run pip3 install 'setuptools==59.6'  # Workaround, poetry 1.1.x removes this.
       - name: Lint by Flake8
