@@ -17,14 +17,14 @@ jobs:
     env:
       PACKAGE_NAME: pydtype
     steps:
-      - Checkout the repository
+      - name: Checkout the repository
         uses: actions/checkout@v3
 
       - name: Install Poetry
         run: pip install poetry
 
       - name: Setup Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
           cache: "poetry"
